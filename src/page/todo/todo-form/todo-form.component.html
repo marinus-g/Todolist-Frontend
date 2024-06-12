@@ -2,19 +2,19 @@
 <form (submit)="onSubmit()" #todoForm=ngForm>
   <div>
     <label for="title">Title:</label>
-    <input type="text" id="title" required [(ngModel)]="newTodo.title" name="title">
+    <input type="text" id="title" required [(ngModel)]="newTodo.title" name="title" pInputText>
   </div>
   <div>
     <label for="description">Beschreibung:</label>
-    <textarea id="description" required [(ngModel)]="newTodo.description" name="description"></textarea>
+    <textarea id="description" required [(ngModel)]="newTodo.description" name="description" pInputTextarea></textarea>
   </div>
   <div>
     <label for="startDate">Start:</label>
-    <input type="date" id="startDate" required [(ngModel)]="newTodo.startDate" name="startDate">
+    <p-calendar id="startDate" [(ngModel)]="newTodo.startDate"></p-calendar>
   </div>
   <div>
     <label for="endDate">Ende:</label>
-    <input type="date" id="endDate" required [(ngModel)]="newTodo.endDate" name="endDate">
+    <p-calendar id="endDate" [(ngModel)]="newTodo.endDate"></p-calendar>
   </div>
   <button type="submit">Speichern</button>
 </form>

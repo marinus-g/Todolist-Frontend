@@ -6,6 +6,10 @@ import {FormsModule} from "@angular/forms";
 import {AuthenticationService} from "../../service/authentication.service";
 import {RouterModule, Routes} from "@angular/router";
 import {HttpClient, HttpClientModule, provideHttpClient} from "@angular/common/http";
+import {InputTextModule} from "primeng/inputtext";
+import {PasswordModule} from "primeng/password";
+import {ButtonDirective} from "primeng/button";
+import {Ripple} from "primeng/ripple";
 
 
 
@@ -22,6 +26,11 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FormsModule,]
+    FormsModule,
+    InputTextModule,
+    PasswordModule,
+    ButtonDirective,
+    Ripple,
+  ]
 })
 export class RegisterModule { }

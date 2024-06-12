@@ -1,9 +1,9 @@
 <div>
   <form (submit)="handleSubmit()">
-    <input placeholder="Username" [(ngModel)]="username" name="username">
-    <input placeholder="Email" [(ngModel)]="email" name="email">
-    <input placeholder="Passwort" type="password" [(ngModel)]="password" name="password">
-    <button>Registrieren</button>
+    <input placeholder="Username" [(ngModel)]="username" name="username" pInputText>
+    <input placeholder="Email" [(ngModel)]="email" name="email" pInputText>
+    <p-password placeholder="Passwort" [(ngModel)]="password" name="password" [feedback]="false" pInputText></p-password>
+    <button pButton pRipple label="Registrieren" class="p-button-success"></button>
   </form>
   @if (this.error) {
     <div>{{ this.error }}</div>

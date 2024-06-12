@@ -6,12 +6,18 @@ import {Router} from "@angular/router";
 import {User} from "../../../model/user.model";
 import {Status} from "../../../model/status";
 import {UserService} from "../../../service/user.service";
+import {CalendarModule} from "primeng/calendar";
+import {InputTextareaModule} from "primeng/inputtextarea";
+import {InputTextModule} from "primeng/inputtext";
 
 @Component({
   selector: 'app-todo-form',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule,
+    CalendarModule,
+    InputTextareaModule,
+    InputTextModule
   ],
   templateUrl: './todo-form.component.html',
   styleUrl: './todo-form.component.css'

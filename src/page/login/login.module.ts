@@ -7,6 +7,8 @@ import {RouterModule, Routes} from "@angular/router";
 import {RegisterComponent} from "../register/register/register.component";
 import {UserService} from "../../service/user.service";
 import {AuthenticationService} from "../../service/authentication.service";
+import {InputTextModule} from "primeng/inputtext";
+import {Ripple} from "primeng/ripple";
 
 
 const routes: Routes = [
@@ -22,6 +24,9 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FormsModule,]
+    FormsModule,
+    InputTextModule,
+    Ripple,
+  ]
 })
 export class LoginModule { }

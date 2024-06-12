@@ -1,22 +1,23 @@
 <button type="button" routerLink="/todo/add">Neues TODO-Item erstellen</button>
-<table>
-  <thead>
-  <th>Id</th>
-  <th>Titel</th>
-  <th>Beschreibung</th>
-  <th>Benutzer</th>
-  <th>Status</th>
-  <th>Erstellt</th>
-  <th></th>
-  </thead>
-  <tbody>
-  <tr *ngFor="let todo of todos">
-    <td>{{ todo.id }}</td>
-    <td>{{ todo.title }}</td>
-    <td>{{ todo.description }}</td>
-    <td>{{ todo.user }}</td>
-    <td>{{ todo.status }}</td>
-    <td>{{ todo.startDate }}</td>
-  </tr>
-  </tbody>
-</table>
+<p-table [value]="todos">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Id</th>
+      <th>Titel</th>
+      <th>Beschreibung</th>
+      <th>Benutzer</th>
+      <th>Status</th>
+      <th>Erstellt</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-todo>
+    <tr>
+      <td>{{ todo.id }}</td>
+      <td>{{ todo.title }}</td>
+      <td>{{ todo.description }}</td>
+      <td>{{ todo.user }}</td>
+      <td>{{ todo.status }}</td>
+      <td>{{ todo.startDate }}</td>
+    </tr>
+  </ng-template>
+</p-table>
