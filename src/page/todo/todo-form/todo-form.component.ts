@@ -34,8 +34,11 @@ export class TodoFormComponent {
 
   onSubmit(): void {
     if (this.newTodo) {
-      this._todoService.createTodo(this.newTodo);
-      this._router.navigate(['/todos']);
+      console.log(this.newTodo)
+      this._todoService.createTodo(this.newTodo).subscribe(value => {
+        console.log(value)
+        this._router.navigate(['/']);
+      })
     }
   }
 }

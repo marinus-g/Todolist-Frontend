@@ -20,5 +20,13 @@ export const routes: Routes = [
     canActivate: [authenticatedGuard],
      loadChildren: () => import('./../page/dashboard/dashboard.module')
         .then(mod => mod.DashboardModule),
+  },
+  {
+    path: 'todo',
+    pathMatch: 'prefix',
+    title: 'Add Todo - todo.app',
+    canActivate: [authenticatedGuard],
+    loadChildren: () => import('./../page/todo/todo.module')
+      .then(mod => mod.TodoModule),
   }
 ];

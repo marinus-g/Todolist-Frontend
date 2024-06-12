@@ -14,12 +14,7 @@ import {authenticatedGuard} from "../../guard/authenticated.guard";
 
 const routes: Routes = [
   {
-    path: 'todo',
-    component: TodoListComponent,
-    canActivate: [authenticatedGuard],
-  },
-  {
-    path: 'add-todo',
+    path: 'add',
     component: TodoFormComponent,
     canActivate: [authenticatedGuard],
   }
