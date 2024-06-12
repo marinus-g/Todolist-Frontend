@@ -14,11 +14,12 @@ export class AuthenticationService {
               @Inject(ENV) private env: Environment) {
   }
 
+
   async isAuthenticated() {
     return this.userService.user !== null;
   }
 
-  async authenticate(param: { password: string; login: string }) {
+  async login(param: { password: string; login: string }) {
     const response$ = this.http.post(this.env.apiUrl + '/login', param, {
       observe: 'response',
       withCredentials: true
@@ -30,4 +31,5 @@ export class AuthenticationService {
       this.userService.user = response.body as any;
     }
   }
+
 }

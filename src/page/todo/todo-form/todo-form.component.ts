@@ -3,6 +3,9 @@ import {FormsModule} from "@angular/forms";
 import {TodoItem} from "../../../model/todo";
 import {TodoService} from "../../../service/todo.service";
 import {Router} from "@angular/router";
+import {User} from "../../../model/user.model";
+import {Status} from "../../../model/status";
+import {UserService} from "../../../service/user.service";
 
 @Component({
   selector: 'app-todo-form',
@@ -15,9 +18,18 @@ import {Router} from "@angular/router";
 })
 export class TodoFormComponent {
 
-  newTodo: TodoItem | undefined;
+  newTodo: TodoItem;
 
-  constructor(private _todoService: TodoService, private _router: Router) {
+  constructor(private _todoService: TodoService, private _userService: UserService, private _router: Router) {
+    this.newTodo = {
+      id:  null,
+      user: _userService.user,
+      title: '',
+      description: '',
+      startDate: null,
+      endDate: null,
+      status: Status.TODO,
+    }
   }
 
   onSubmit(): void {

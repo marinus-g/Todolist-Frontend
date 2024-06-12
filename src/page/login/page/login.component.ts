@@ -22,7 +22,7 @@ export class LoginComponent {
       this.error = "Please fill in all fields";
       return;
     }
-    this.authService.authenticate({login: this.username, password: this.password})
+    this.authService.login({login: this.username, password: this.password})
       .catch(reason => {
         this.error = reason;
       })
