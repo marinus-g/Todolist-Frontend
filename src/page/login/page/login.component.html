@@ -1,0 +1,10 @@
+<div>
+  <form (submit)="handleSubmit()">
+    <input placeholder="Username" [(ngModel)]="username" name="username">
+    <input placeholder="Password" type="password" [(ngModel)]="password" name="password">
+    <button>Einloggen</button>
+  </form>
+  @if (error) {
+    <div>{{ error }}</div>
+  }
+</div>

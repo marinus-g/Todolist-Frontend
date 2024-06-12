@@ -1,0 +1,11 @@
+<div>
+  <form (submit)="handleSubmit()">
+    <input placeholder="Username" [(ngModel)]="username" name="username">
+    <input placeholder="Email" [(ngModel)]="email" name="email">
+    <input placeholder="Passwort" type="password" [(ngModel)]="password" name="password">
+    <button>Registrieren</button>
+  </form>
+  @if (this.error) {
+    <div>{{ this.error }}</div>
+  }
+</div>
